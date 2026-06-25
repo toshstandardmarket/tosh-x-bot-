@@ -1,62 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>TOSH-X-BOT</title>
-<style>
-body{
-  background:#050505;
-  color:white;
-  font-family:Arial;
-  text-align:center;
-  padding:40px;
-}
-.card{
-  background:#111;
-  margin:15px auto;
-  padding:20px;
-  border-radius:15px;
-  max-width:350px;
-}
-.green{color:#00ff66;font-size:30px}
-.yellow{color:#ffd000;font-size:30px}
-.red{color:#ff3333;font-size:30px}
-button{
-  padding:15px 30px;
-  background:#00ff66;
-  border:none;
-  border-radius:10px;
-  font-weight:bold;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOSH-X-BOT</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>TOSH-X-BOT</h1>
+<header class="header">
 
-<div class="card">
-<h2>VOLATILITY 100</h2>
-<div class="green">🟢 92%</div>
-</div>
+    <div class="logo-area">
+        <h1>TOSH-X-BOT</h1>
+        <p>Professional Quantitative Trading Platform</p>
+    </div>
 
-<div class="card">
-<h2>VOLATILITY 75</h2>
-<div class="green">🟢 88%</div>
-</div>
+    <div class="header-right">
 
-<div class="card">
-<h2>RISE/FALL PRO</h2>
-<div class="yellow">🟡 79%</div>
-</div>
+        <button id="disciplineBtn">🛡️</button>
 
-<div class="card">
-<h2>DIGIT MASTER</h2>
-<div class="red">🔴 62%</div>
-</div>
+        <button id="notifyBtn">🔔</button>
 
-<br>
+        <button id="loginBtn">Login</button>
 
-<button>CONNECT DERIV</button>
+        <a href="https://partner-tracking.deriv.com/click?a=31609&o=1&c=3&link_id=1">
+            <button id="signupBtn">Sign Up</button>
+        </a>
+
+    </div>
+
+</header>
+
+<nav class="subnav">
+
+    <button class="active">
+        📊 Dashboard
+    </button>
+
+    <button>
+        🤖 Bot Builder
+    </button>
+
+    <button>
+        📈 Analysis
+    </button>
+
+    <button>
+        💬 Live Chat
+    </button>
+
+</nav>
+
+<section class="market-status">
+
+    <span class="live-dot"></span>
+
+    LIVE MARKET SCANNER ACTIVE
+
+</section>
+
+<main id="dashboard">
+
+<!-- Bot cards will go here -->
+
+</main>
+
+<script src="script.js"></script>
 
 </body>
-  </html>
+
+</html>
