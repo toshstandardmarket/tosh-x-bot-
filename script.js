@@ -1,3 +1,4 @@
+alert("script.js loaded");
 // =========================
 // TOSH-X-BOT v1 Script
 // =========================
