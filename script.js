@@ -96,6 +96,14 @@ dashboard.appendChild(card);
 
 buildDashboard();
 
+const chart=document.querySelector(".chart-container");
+
+if(chart){
+
+chart.style.display="block";
+
+}
+
 
 
 // =======================
@@ -142,12 +150,17 @@ const page=this.innerText.trim();
 
 if(page.includes("Dashboard")){
 
+document.querySelector(".chart-container").style.display="block";
+
 buildDashboard();
 
 }
 
-else if(page.includes("Bot Builder")){
+}
 
+else if(page.includes("Bot Builder")){
+  
+document.querySelector(".chart-container").style.display="none";
 dashboard.innerHTML=`
 
 <div class="page">
@@ -191,7 +204,8 @@ CREATE STRATEGY
 }
 
 else if(page.includes("Analysis")){
-
+  
+document.querySelector(".chart-container").style.display="none";
 dashboard.innerHTML=`
 
 <div class="page">
@@ -241,7 +255,8 @@ dashboard.innerHTML=`
 }
 
 else if(page.includes("Live Chat")){
-
+  
+document.querySelector(".chart-container").style.display="none";
 dashboard.innerHTML=`
 
 <div class="page">
