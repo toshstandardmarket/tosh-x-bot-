@@ -210,9 +210,10 @@ alert(`🛡️ TOSH Systemic Discipline Protocol
 
 };
 
-document.getElementById("loginBtn").onclick=function(){
+document.getElementById("loginBtn").onclick = function () {
 
-alert("Deriv Login will be connected in the next phase.");
+window.location.href =
+"https://oauth.deriv.com/oauth2/authorize?app_id=33DeDhd6E4gFrfMBVs6ZC";
 
 };
 
