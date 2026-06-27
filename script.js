@@ -142,34 +142,36 @@ chart.style.display="block";
 
 
 
+
 // =======================
 // Simulate Market
 // =======================
 
-setInterval(()=>{
+setInterval(() => {
 
-document.querySelectorAll(".bot-percent").forEach(el=>{
+document.querySelectorAll(".bot-percent").forEach(el => {
 
-let value=parseInt(el.innerText);
+let value = parseInt(el.innerText);
 
-value+=Math.floor(Math.random()*5)-2;
+value += Math.floor(Math.random() * 5) - 2;
 
-if(value>97)value=97;
+if (value > 97) value = 97;
 
-if(value<72)value=72;
+if (value < 72) value = 72;
 
-el.innerHTML=value+"%";
+el.innerHTML = value + "%";
 
 const bar = el.parentElement.querySelector(".progress-fill");
 
-if(bar){
-    bar.style.width = value + "%";
+if (bar) {
+
+bar.style.width = value + "%";
+
 }
 
 });
 
-},2500);
-
+}, 2500);
 
 
 // =======================
