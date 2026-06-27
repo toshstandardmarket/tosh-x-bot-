@@ -84,57 +84,55 @@ const dashboard = document.getElementById("dashboard");
 
 function buildDashboard(){
 
+const dashboard=document.getElementById("dashboard");
+
 dashboard.innerHTML="";
+
+const bots=[
+
+["🚀","TOSH Alpha Bot","Trend Strategy","91","LOW"],
+
+["⚛️","TOSH Quantum Bot","Momentum Strategy","94","LOW"],
+
+["📈","Rise/Fall AI","Rise/Fall Scanner","87","MEDIUM"],
+
+["🔢","Digit Hunter","Digit Analysis","89","MEDIUM"],
+
+["📊","Trend Scanner","EMA Scanner","92","LOW"],
+
+["⚡","Market Pulse","Fast Market","88","LOW"],
+
+["🎯","Match Hunter","Matches Engine","82","HIGH"],
+
+["♾️","Odd/Even Master","Odd/Even AI","90","MEDIUM"]
+
+];
 
 bots.forEach(bot=>{
 
-const card=document.createElement("div");
+dashboard.innerHTML+=`
 
-card.className="bot-card";
+<div class="bot-card">
 
-card.innerHTML=`
+<div class="bot-icon">${bot[0]}</div>
 
-<div class="bot-icon"
+<h2>${bot[1]}</h2>
 
-style="background:${bot.color};">
+<p>${bot[2]}</p>
 
-${bot.icon}
-
-</div>
-
-<h2 class="bot-title">
-
-${bot.name}
-
-</h2>
-
-<p>
-
-${bot.strategy}
-
-</p>
-
-<div class="bot-percent">
-
-${bot.confidence}%
-
-</div>
+<div class="bot-percent">${bot[3]}%</div>
 
 <div class="progress">
 
 <div class="progress-fill"
 
-style="width:${bot.confidence}%;background:${bot.color};">
+style="width:${bot[3]}%">
 
 </div>
 
 </div>
 
-<p class="bot-status">
-
-Risk : ${bot.risk}
-
-</p>
+<p>Risk : ${bot[4]}</p>
 
 <button class="bot-btn">
 
@@ -142,17 +140,14 @@ LOAD BOT
 
 </button>
 
-`;
+</div>
 
-dashboard.appendChild(card);
+`;
 
 });
 
 }
 
-buildDashboard();
-
-animateCards();
 // =========================
 // Navigation
 // =========================
@@ -529,3 +524,4 @@ oldBuildDashboard();
 animateCards();
 
 };
+buildDashboard();
