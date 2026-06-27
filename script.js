@@ -146,21 +146,131 @@ buildDashboard();
 
 }
 
-else{
+else if(page.includes("Bot Builder")){
 
 dashboard.innerHTML=`
 
-<div style="padding:80px;text-align:center;">
+<div class="page">
 
-<h1>${page}</h1>
+<h1>🤖 BOT BUILDER</h1>
 
-<br>
+<div class="builder-box">
 
-<h3>
+<label>EMA Fast</label>
 
-Coming Soon...
+<input type="range" min="5" max="50" value="10">
 
-</h3>
+<label>EMA Slow</label>
+
+<input type="range" min="20" max="200" value="50">
+
+<label>Risk Level</label>
+
+<select>
+
+<option>Low</option>
+
+<option>Medium</option>
+
+<option>High</option>
+
+</select>
+
+<button class="bot-btn">
+
+CREATE STRATEGY
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+}
+
+else if(page.includes("Analysis")){
+
+dashboard.innerHTML=`
+
+<div class="page">
+
+<h1>📈 ANALYSIS</h1>
+
+<div class="analysis-grid">
+
+<div class="stat-card">
+
+<h2>Win Rate</h2>
+
+<h1>91%</h1>
+
+</div>
+
+<div class="stat-card">
+
+<h2>Total Trades</h2>
+
+<h1>0</h1>
+
+</div>
+
+<div class="stat-card">
+
+<h2>Today's Profit</h2>
+
+<h1>$0.00</h1>
+
+</div>
+
+<div class="stat-card">
+
+<h2>Running Bots</h2>
+
+<h1>0</h1>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+}
+
+else if(page.includes("Live Chat")){
+
+dashboard.innerHTML=`
+
+<div class="page">
+
+<h1>💬 LIVE CHAT</h1>
+
+<div class="chat-box">
+
+<div class="chat-message">
+
+Welcome to TOSH Community.
+
+</div>
+
+<input
+
+type="text"
+
+placeholder="Type message..."
+
+>
+
+<button class="bot-btn">
+
+SEND
+
+</button>
+
+</div>
 
 </div>
 
