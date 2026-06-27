@@ -290,8 +290,81 @@ frameborder="0">
 console.log("Builder:", document.getElementById("builder"));
 console.log("Analysis:", document.getElementById("analysis"));
 console.log("Chat:", document.getElementById("chat"));
-document.getElementById("builder").innerHTML = "<h1 style='color:white'>🤖 Bot Builder Works</h1>";
 
-document.getElementById("analysis").innerHTML = "<h1 style='color:white'>📈 Analysis Works</h1>";
+// =========================
+// TOSH Pages
+// =========================
 
-document.getElementById("chat").innerHTML = "<h1 style='color:white'>💬 Live Chat Works</h1>";
+// Bot Builder
+document.getElementById("builder").innerHTML = `
+<h1>🤖 TOSH Bot Builder</h1>
+
+<div class="page-card">
+<h2>Custom Strategy Builder</h2>
+
+<p>Create your own professional bot using mathematical indicators.</p>
+
+<ul style="margin-top:15px;line-height:2;">
+<li>✅ EMA Trend Engine</li>
+<li>✅ RSI Momentum</li>
+<li>✅ MACD Confirmation</li>
+<li>✅ Bollinger Bands</li>
+<li>✅ Tick Speed Detection</li>
+<li>✅ Volatility Filter</li>
+</ul>
+
+<button class="bot-btn">
+CREATE BOT
+</button>
+
+</div>
+`;
+
+// Analysis
+document.getElementById("analysis").innerHTML = `
+<h1>📈 Analysis Center</h1>
+
+<div class="page-card">
+
+<h2>Performance Statistics</h2>
+
+<p>Today's Win Rate</p>
+
+<h1 style="color:#00ffd5;">91%</h1>
+
+<hr style="margin:20px 0;">
+
+<p>Total Trades : 0</p>
+
+<p>Total Profit : $0.00</p>
+
+<p>Running Bots : 0</p>
+
+</div>
+`;
+
+// Live Chat
+document.getElementById("chat").innerHTML = `
+<h1>💬 Live Trading Room</h1>
+
+<div class="page-card">
+
+<h2>Live Market</h2>
+
+<iframe
+src="https://s.tradingview.com/widgetembed/?symbol=OANDA:EURUSD&interval=1&theme=dark"
+width="100%"
+height="350"
+frameborder="0">
+</iframe>
+
+</div>
+
+<div class="page-card">
+
+<h2>Community Chat</h2>
+
+<p>Community chat will be connected in the next phase.</p>
+
+</div>
+`;
