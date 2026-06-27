@@ -286,3 +286,7 @@ frameborder="0">
 </div>
 
 `;
+
+console.log("Builder:", document.getElementById("builder"));
+console.log("Analysis:", document.getElementById("analysis"));
+console.log("Chat:", document.getElementById("chat"));
