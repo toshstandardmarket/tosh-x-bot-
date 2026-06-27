@@ -157,8 +157,6 @@ animateCards();
 // Navigation
 // =========================
 
-const chart = document.querySelector(".chart-container");
-
 document.querySelectorAll(".subnav button").forEach(button=>{
 
 button.onclick=function(){
@@ -186,10 +184,6 @@ buildDashboard();
 }
 
 else if(page.includes("Bot Builder")){
-
-if(chart){
-
-chart.style.display="none";
 
 }
 
@@ -238,10 +232,6 @@ CREATE BOT
 }
 
 else if(page.includes("Analysis")){
-
-if(chart){
-
-chart.style.display="none";
 
 }
 
@@ -294,10 +284,6 @@ dashboard.innerHTML=`
 }
 
 else if(page.includes("Live Chat")){
-
-if(chart){
-
-chart.style.display="none";
 
 }
 
@@ -376,9 +362,6 @@ if(e.target.classList.contains("bot-btn")){
 
 const botName=e.target.parentElement.querySelector(".bot-title").innerText;
 
-if(chart){
-
-chart.style.display="none";
 
 }
 
@@ -442,9 +425,6 @@ START BOT
 
 if(e.target.classList.contains("back-btn")){
 
-if(chart){
-
-chart.style.display="block";
 
 }
 
