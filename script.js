@@ -290,3 +290,8 @@ frameborder="0">
 console.log("Builder:", document.getElementById("builder"));
 console.log("Analysis:", document.getElementById("analysis"));
 console.log("Chat:", document.getElementById("chat"));
+document.getElementById("builder").innerHTML = "<h1 style='color:white'>🤖 Bot Builder Works</h1>";
+
+document.getElementById("analysis").innerHTML = "<h1 style='color:white'>📈 Analysis Works</h1>";
+
+document.getElementById("chat").innerHTML = "<h1 style='color:white'>💬 Live Chat Works</h1>";
