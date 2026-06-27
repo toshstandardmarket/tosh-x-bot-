@@ -1,73 +1,83 @@
 alert("script.js loaded");
+
 // =========================
-// TOSH-X-BOT v1 Script
+// TOSH-X-BOT
 // =========================
 
 const bots = [
+
 {
 icon:"🚀",
 name:"TOSH Alpha Bot",
-strategy:"Trend Engine",
+strategy:"Trend Strategy",
 risk:"LOW",
 confidence:91,
 color:"#00ffb3"
 },
+
 {
 icon:"⚛️",
 name:"TOSH Quantum Bot",
-strategy:"Momentum AI",
+strategy:"Momentum Strategy",
 risk:"LOW",
 confidence:94,
 color:"#00d9ff"
 },
+
 {
 icon:"📈",
 name:"Rise/Fall AI",
-strategy:"Direction Scanner",
+strategy:"Rise/Fall Analysis",
 risk:"MEDIUM",
 confidence:87,
-color:"#ffcc00"
+color:"#ffd700"
 },
+
 {
 icon:"🔢",
 name:"Digit Hunter",
-strategy:"Digit Pattern",
+strategy:"Digit Pattern Engine",
 risk:"MEDIUM",
 confidence:89,
 color:"#ff66ff"
 },
+
 {
 icon:"📊",
-name:"Trend Scanner Pro",
-strategy:"EMA Tracker",
+name:"Trend Scanner",
+strategy:"EMA Scanner",
 risk:"LOW",
-confidence:93,
+confidence:92,
 color:"#00ff66"
 },
+
 {
 icon:"⚡",
 name:"Market Pulse",
-strategy:"Fast Volatility",
+strategy:"Fast Market Tracking",
 risk:"LOW",
 confidence:88,
 color:"#00ffff"
 },
+
 {
 icon:"🎯",
 name:"Match Hunter",
-strategy:"Pattern Match",
+strategy:"Matches AI",
 risk:"HIGH",
 confidence:82,
 color:"#ff4444"
 },
+
 {
 icon:"♾️",
 name:"Odd/Even Master",
-strategy:"Probability AI",
+strategy:"Odd Even Probability",
 risk:"MEDIUM",
 confidence:90,
 color:"#ffaa00"
 }
+
 ];
 
 const dashboard = document.getElementById("dashboard");
@@ -85,6 +95,7 @@ card.className="bot-card";
 card.innerHTML=`
 
 <div class="bot-icon"
+
 style="background:${bot.color};">
 
 ${bot.icon}
@@ -92,18 +103,27 @@ ${bot.icon}
 </div>
 
 <h2 class="bot-title">
+
 ${bot.name}
+
 </h2>
 
-<p>${bot.strategy}</p>
+<p>
+
+${bot.strategy}
+
+</p>
 
 <div class="bot-percent">
+
 ${bot.confidence}%
+
 </div>
 
 <div class="progress">
 
 <div class="progress-fill"
+
 style="width:${bot.confidence}%;background:${bot.color};">
 
 </div>
@@ -132,7 +152,28 @@ dashboard.appendChild(card);
 
 buildDashboard();
 
-const chart=document.querySelector(".chart-container");
+animateCards();
+// =========================
+// Navigation
+// =========================
+
+const chart = document.querySelector(".chart-container");
+
+document.querySelectorAll(".subnav button").forEach(button=>{
+
+button.onclick=function(){
+
+document.querySelectorAll(".subnav button").forEach(btn=>{
+
+btn.classList.remove("active");
+
+});
+
+this.classList.add("active");
+
+const page=this.innerText;
+
+if(page.includes("Dashboard")){
 
 if(chart){
 
@@ -140,71 +181,18 @@ chart.style.display="block";
 
 }
 
-
-
-
-// =======================
-// Simulate Market
-// =======================
-
-setInterval(() => {
-
-document.querySelectorAll(".bot-percent").forEach(el => {
-
-let value = parseInt(el.innerText);
-
-value += Math.floor(Math.random() * 5) - 2;
-
-if (value > 97) value = 97;
-
-if (value < 72) value = 72;
-
-el.innerHTML = value + "%";
-
-const bar = el.parentElement.querySelector(".progress-fill");
-
-if (bar) {
-
-bar.style.width = value + "%";
-
-}
-
-});
-
-}, 2500);
-
-
-// =======================
-// Navigation
-// =======================
-
-document.querySelectorAll(".subnav button")
-
-.forEach(button=>{
-
-button.onclick=function(){
-
-document.querySelectorAll(".subnav button")
-
-.forEach(btn=>btn.classList.remove("active"));
-
-this.classList.add("active");
-
-const page=this.innerText.trim();
-
-if(page.includes("Dashboard")){
-
-document.querySelector(".chart-container").style.display="block";
-
 buildDashboard();
 
 }
 
+else if(page.includes("Bot Builder")){
+
+if(chart){
+
+chart.style.display="none";
+
 }
 
-else if(page.includes("Bot Builder")){
-  
-document.querySelector(".chart-container").style.display="none";
 dashboard.innerHTML=`
 
 <div class="page">
@@ -212,6 +200,8 @@ dashboard.innerHTML=`
 <h1>🤖 BOT BUILDER</h1>
 
 <div class="builder-box">
+
+<h3>Create Your Strategy</h3>
 
 <label>EMA Fast</label>
 
@@ -235,7 +225,7 @@ dashboard.innerHTML=`
 
 <button class="bot-btn">
 
-CREATE STRATEGY
+CREATE BOT
 
 </button>
 
@@ -248,8 +238,13 @@ CREATE STRATEGY
 }
 
 else if(page.includes("Analysis")){
-  
-document.querySelector(".chart-container").style.display="none";
+
+if(chart){
+
+chart.style.display="none";
+
+}
+
 dashboard.innerHTML=`
 
 <div class="page">
@@ -260,7 +255,7 @@ dashboard.innerHTML=`
 
 <div class="stat-card">
 
-<h2>Win Rate</h2>
+<h3>Win Rate</h3>
 
 <h1>91%</h1>
 
@@ -268,7 +263,7 @@ dashboard.innerHTML=`
 
 <div class="stat-card">
 
-<h2>Total Trades</h2>
+<h3>Total Trades</h3>
 
 <h1>0</h1>
 
@@ -276,7 +271,7 @@ dashboard.innerHTML=`
 
 <div class="stat-card">
 
-<h2>Today's Profit</h2>
+<h3>Profit</h3>
 
 <h1>$0.00</h1>
 
@@ -284,7 +279,7 @@ dashboard.innerHTML=`
 
 <div class="stat-card">
 
-<h2>Running Bots</h2>
+<h3>Running Bots</h3>
 
 <h1>0</h1>
 
@@ -299,8 +294,13 @@ dashboard.innerHTML=`
 }
 
 else if(page.includes("Live Chat")){
-  
-document.querySelector(".chart-container").style.display="none";
+
+if(chart){
+
+chart.style.display="none";
+
+}
+
 dashboard.innerHTML=`
 
 <div class="page">
@@ -316,12 +316,8 @@ Welcome to TOSH Community.
 </div>
 
 <input
-
 type="text"
-
-placeholder="Type message..."
-
->
+placeholder="Type message...">
 
 <button class="bot-btn">
 
@@ -337,19 +333,156 @@ SEND
 
 }
 
+};
+
+});
+// =========================
+// Live Confidence Engine
+// =========================
+
+setInterval(()=>{
+
+document.querySelectorAll(".bot-percent").forEach(el=>{
+
+let value=parseInt(el.innerText);
+
+value+=Math.floor(Math.random()*5)-2;
+
+if(value>97)value=97;
+
+if(value<72)value=72;
+
+el.innerHTML=value+"%";
+
+const bar=el.parentElement.querySelector(".progress-fill");
+
+if(bar){
+
+bar.style.width=value+"%";
+
 }
 
 });
 
+},2500);
 
+// =========================
+// Load Bot Workspace
+// =========================
 
-// =======================
+document.addEventListener("click",function(e){
+
+if(e.target.classList.contains("bot-btn")){
+
+const botName=e.target.parentElement.querySelector(".bot-title").innerText;
+
+if(chart){
+
+chart.style.display="none";
+
+}
+
+dashboard.innerHTML=`
+
+<div class="page">
+
+<button class="bot-btn back-btn">
+
+⬅ Back To Dashboard
+
+</button>
+
+<h1>${botName}</h1>
+
+<div class="analysis-grid">
+
+<div class="stat-card">
+
+<h3>Status</h3>
+
+<h2 style="color:#00ff66;">READY</h2>
+
+</div>
+
+<div class="stat-card">
+
+<h3>Confidence</h3>
+
+<h2>LIVE</h2>
+
+</div>
+
+<div class="stat-card">
+
+<h3>Market</h3>
+
+<h2>Monitoring...</h2>
+
+</div>
+
+<div class="stat-card">
+
+<h3>Trade</h3>
+
+<button class="bot-btn">
+
+START BOT
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+}
+
+if(e.target.classList.contains("back-btn")){
+
+if(chart){
+
+chart.style.display="block";
+
+}
+
+buildDashboard();
+
+}
+
+});
+// =========================
+// Notification Button
+// =========================
+
+const notifyBtn = document.getElementById("notifyBtn");
+
+if(notifyBtn){
+
+notifyBtn.onclick=function(){
+
+alert(`🔔 Notifications
+
+• Market Scanner Active
+• 8 Bots Ready
+• Live Feed Connected
+• No new alerts`);
+
+};
+
+}
+
+// =========================
 // Discipline Button
-// =======================
+// =========================
 
-document.getElementById("disciplineBtn")
+const disciplineBtn=document.getElementById("disciplineBtn");
 
-.onclick=function(){
+if(disciplineBtn){
+
+disciplineBtn.onclick=function(){
 
 alert(
 
@@ -371,20 +504,48 @@ alert(
 
 };
 
+}
 
+// =========================
+// Card Entrance Animation
+// =========================
 
-// =======================
-// Notification
-// =======================
+function animateCards(){
 
-document.getElementById("notifyBtn")
+const cards=document.querySelectorAll(".bot-card");
 
-.onclick=function(){
+cards.forEach((card,index)=>{
 
-alert(
+card.style.opacity="0";
 
-"🔔 No new notifications."
+card.style.transform="translateY(30px)";
 
-);
+setTimeout(()=>{
+
+card.style.transition=".5s";
+
+card.style.opacity="1";
+
+card.style.transform="translateY(0px)";
+
+},index*120);
+
+});
+
+}
+
+animateCards();
+
+// =========================
+// Auto Refresh Dashboard
+// =========================
+
+const oldBuildDashboard=buildDashboard;
+
+buildDashboard=function(){
+
+oldBuildDashboard();
+
+animateCards();
 
 };
