@@ -234,3 +234,23 @@ margin-top:20px;
 border-radius:15px;
 
 }
+
+#builder,
+#analysis,
+#chat{
+
+padding:30px;
+
+display:none;
+
+min-height:500px;
+
+}
+
+#builder.active-page,
+#analysis.active-page,
+#chat.active-page{
+
+display:block;
+
+}
