@@ -160,11 +160,11 @@ if(value<72)value=72;
 
 el.innerHTML=value+"%";
 
-el.parentElement
+const bar = el.parentElement.querySelector(".progress-fill");
 
-.querySelector(".progress-fill")
-
-.style.width=value+"%";
+if(bar){
+    bar.style.width = value + "%";
+}
 
 });
 
