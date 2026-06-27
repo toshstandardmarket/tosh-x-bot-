@@ -94,14 +94,21 @@ display:none;
 padding:30px;
 }
 
-.active-page{
+.page.active-page{
 display:block;
 }
 
-#dashboard{
+#dashboard.active-page{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:25px;
+}
+
+#builder.active-page,
+#analysis.active-page,
+#chat.active-page{
+display:block;
+min-height:500px;
 }
 
 .bot-card{
@@ -232,25 +239,5 @@ color:#00ffd5;
 margin-top:20px;
 
 border-radius:15px;
-
-}
-
-#builder,
-#analysis,
-#chat{
-
-padding:30px;
-
-display:none;
-
-min-height:500px;
-
-}
-
-#builder.active-page,
-#analysis.active-page,
-#chat.active-page{
-
-display:block;
 
 }
