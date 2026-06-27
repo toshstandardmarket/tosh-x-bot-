@@ -221,3 +221,68 @@ document.getElementById("signupBtn").onclick=function(){
 window.location.href="https://partner-tracking.deriv.com/click?a=31609&o=1&c=3&link_id=1";
 
 };
+
+// =========================
+// Build Empty Pages
+// =========================
+
+document.getElementById("builder").innerHTML = `
+
+<h1>🤖 Bot Builder</h1>
+
+<div class="page-card">
+
+<h2>Create Advanced Strategy</h2>
+
+<p>Configure EMA, Momentum, Bollinger Bands, RSI, MACD and custom filters.</p>
+
+<button class="bot-btn">
+
+COMING SOON
+
+</button>
+
+</div>
+
+`;
+
+document.getElementById("analysis").innerHTML = `
+
+<h1>📈 Analysis Center</h1>
+
+<div class="page-card">
+
+<h2>Performance Dashboard</h2>
+
+<p>Win Rate, Profit, Loss, Active Trades and History will appear here.</p>
+
+</div>
+
+`;
+
+document.getElementById("chat").innerHTML = `
+
+<h1>💬 Live Chat</h1>
+
+<div class="page-card">
+
+<h2>Live Market</h2>
+
+<iframe
+src="https://s.tradingview.com/widgetembed/?symbol=OANDA:EURUSD&interval=1&theme=dark"
+width="100%"
+height="350"
+frameborder="0">
+</iframe>
+
+</div>
+
+<div class="page-card">
+
+<h2>Community Chat</h2>
+
+<p>Coming Soon...</p>
+
+</div>
+
+`;
