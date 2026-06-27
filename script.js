@@ -5,52 +5,68 @@ alert("script.js loaded");
 
 const bots = [
 {
+icon:"🚀",
 name:"TOSH Alpha Bot",
-strategy:"Trend Strategy",
+strategy:"Trend Engine",
 risk:"LOW",
-confidence:91
+confidence:91,
+color:"#00ffb3"
 },
 {
+icon:"⚛️",
 name:"TOSH Quantum Bot",
-strategy:"Momentum Strategy",
+strategy:"Momentum AI",
 risk:"LOW",
-confidence:94
+confidence:94,
+color:"#00d9ff"
 },
 {
+icon:"📈",
 name:"Rise/Fall AI",
-strategy:"Rise/Fall Analysis",
+strategy:"Direction Scanner",
 risk:"MEDIUM",
-confidence:84
+confidence:87,
+color:"#ffcc00"
 },
 {
+icon:"🔢",
 name:"Digit Hunter",
-strategy:"Digit Pattern Engine",
+strategy:"Digit Pattern",
 risk:"MEDIUM",
-confidence:89
+confidence:89,
+color:"#ff66ff"
 },
 {
+icon:"📊",
 name:"Trend Scanner Pro",
-strategy:"Trend Confirmation",
+strategy:"EMA Tracker",
 risk:"LOW",
-confidence:92
+confidence:93,
+color:"#00ff66"
 },
 {
+icon:"⚡",
 name:"Market Pulse",
-strategy:"Fast Market Scanner",
+strategy:"Fast Volatility",
 risk:"LOW",
-confidence:88
+confidence:88,
+color:"#00ffff"
 },
 {
+icon:"🎯",
 name:"Match Hunter",
-strategy:"Pattern Matching",
+strategy:"Pattern Match",
 risk:"HIGH",
-confidence:81
+confidence:82,
+color:"#ff4444"
 },
 {
+icon:"♾️",
 name:"Odd/Even Master",
-strategy:"Odd / Even Logic",
+strategy:"Probability AI",
 risk:"MEDIUM",
-confidence:90
+confidence:90,
+color:"#ffaa00"
 }
 ];
 
@@ -68,11 +84,31 @@ card.className="bot-card";
 
 card.innerHTML=`
 
-<h2 class="bot-title">${bot.name}</h2>
+<div class="bot-icon"
+style="background:${bot.color};">
+
+${bot.icon}
+
+</div>
+
+<h2 class="bot-title">
+${bot.name}
+</h2>
 
 <p>${bot.strategy}</p>
 
-<div class="bot-percent">${bot.confidence}%</div>
+<div class="bot-percent">
+${bot.confidence}%
+</div>
+
+<div class="progress">
+
+<div class="progress-fill"
+style="width:${bot.confidence}%;background:${bot.color};">
+
+</div>
+
+</div>
 
 <p class="bot-status">
 
@@ -82,7 +118,7 @@ Risk : ${bot.risk}
 
 <button class="bot-btn">
 
-LOGIN TO TRADE
+LOAD BOT
 
 </button>
 
@@ -123,6 +159,12 @@ if(value>97)value=97;
 if(value<72)value=72;
 
 el.innerHTML=value+"%";
+
+el.parentElement
+
+.querySelector(".progress-fill")
+
+.style.width=value+"%";
 
 });
 
